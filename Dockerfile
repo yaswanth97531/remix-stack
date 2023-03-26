@@ -5,7 +5,7 @@ FROM node:16-bullseye-slim as base
 ENV NODE_ENV production
 
 # Install openssl for Prisma
-RUN apt-get update && apt-get install -y openssl sqlite3
+RUN apt-get update && apt-get install -y openssl
 
 # Install all node_modules, including dev dependencies
 FROM base as deps
@@ -41,7 +41,8 @@ RUN npm run build
 FROM base
 
 ENV DATABASE_URL=file:/data/sqlite.db
-ENV PORT="8080"
+ENV SESSION_SECRET=super-duper-s3cret
+ENV PORT="3000"
 ENV NODE_ENV="production"
 
 # add shortcut for connecting to database CLI

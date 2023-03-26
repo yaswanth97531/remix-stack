@@ -5,7 +5,7 @@
 Learn more about [Remix Stacks](https://remix.run/stacks).
 
 ```
-npx create-remix@latest --template remix-run/indie-stack
+npx create-remix@latest --template yaswanth97531/remix-stack
 ```
 
 ## What's in the stack
